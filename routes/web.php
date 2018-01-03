@@ -10,7 +10,7 @@ Route::get('futurepro','MakkahController@futurepro');
 
 Route::get( 'posts/{id}','MakkahController@postsDetails');
 
-Route::post('posts/{id}/comment','CommentController@postComment');
+Route::post('/comment','CommentController@postComment');
 
 Route::get('album','MakkahController@album');
 /////////////////////////////////////////////
@@ -24,7 +24,7 @@ Route::group(['middleware' => ['auth','roles']], function () {
 	Route::get('/admin/newsadd', 'NewsController@newsadd');
 	Route::post('/admin/newsstore', 'NewsController@store');
 
-	 Route::get('/admin/news/{id}/delete', 'NewsController@delete');
+	Route::get('/admin/news/{id}/delete', 'NewsController@delete');
 
 	Route::get('/admin/news/{id}/edit', 'NewsController@edit');
 	Route::post('/admin/news/{id}/update', 'NewsController@update');
